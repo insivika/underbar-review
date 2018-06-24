@@ -86,15 +86,15 @@
 
   // Return all elements of an array that pass a truth test.
   _.filter = function(collection, test) {
-   var arr = [];
+    var arr = [];
    
-   _.each(collection, function(ele){
-   if(test(ele)){
-   arr.push(ele);
-   } 
-   });
+    _.each(collection, function(ele){
+      if (test(ele)) {
+        arr.push(ele);
+      } 
+    });
 
-  return arr;
+    return arr;
   };
 
   // Return all elements of an array that don't pass a truth test.
@@ -122,18 +122,18 @@
     if (isSorted === undefined && iterator === undefined) {
     
     
-    _.each(array, function(ele) {
-      if (_.indexOf(uniqueArr, ele) === - 1) {
+      _.each(array, function(ele) {
+        if (_.indexOf(uniqueArr, ele) === - 1) {
           uniqueArr.push(ele);
-      }
+        }
   
-    });
+      });
     
     } else {
       for (var i = 0; i < array.length; i ++) {
       
         if (iterator(array[i])) {
-          uniqueArr.push(array[i])
+          uniqueArr.push(array[i]);
         }
       }
     }
@@ -147,13 +147,13 @@
     // map() is a useful primitive iteration function that works a lot
     // like each(), but in addition to running the operation on all
     // the members, it also maintains an array of results.  
-var arr = [];
+    var arr = [];
 
-_.each(collection, function(ele){
-       arr.push(iterator(ele));
-})
+    _.each(collection, function(ele){
+      arr.push(iterator(ele));
+    });
 
-return arr;
+    return arr;
 
   };
 
@@ -196,7 +196,7 @@ return arr;
   //   }); // should be 5, regardless of the iterator function passed in
   //          No accumulator is given so the first element is used.
   _.reduce = function(collection, iterator, accumulator) {
-    
+
   };
 
   // Determine if the array or object contains a given value (using `===`).
