@@ -114,33 +114,32 @@
     return arr;
   };
 
-  // Produce a duplicate-free version of the array.
+
+
+
   _.uniq = function(array, isSorted, iterator) {
+    //  if the array isSorted
+    var newArr = [];
+    var temp = [];
 
-
-    var uniqueArr = [];
-    var temp = [];  //holds true or false values
-    if (isSorted === undefined && iterator === undefined) {
-    
-    
+    if (isSorted) {
       _.each(array, function(ele) {
-        if (_.indexOf(uniqueArr, ele) === - 1) {
-          uniqueArr.push(ele);
+        if (_.indexOf(temp, iterator(ele)) === -1) {
+          temp.push(iterator(ele))
+          newArr.push(ele);
         }
-  
-      });
-    
+      })
     } else {
-      for (var i = 0; i < array.length; i ++) {
-      
-        if (iterator(array[i])) {
-          uniqueArr.push(array[i]);
+      _.each(array, function(ele2) {
+        if (_.indexOf(newArr, ele2) === -1) {
+          newArr.push(ele2)
         }
-      }
+      })
     }
 
-    return uniqueArr;
+    return newArr
   };
+
 
 
   // Return the results of applying an iterator to each element.
